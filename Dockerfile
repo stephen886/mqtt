@@ -33,4 +33,4 @@ RUN set -eux; \
 	apk add --no-cache python3; \
 	rabbitmqadmin --version
 
-EXPOSE 15672 15674 15675 1883 8883 5671 5672 
+EXPOSE 15672 15674 15675 1883 5672 
