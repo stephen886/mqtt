@@ -6,7 +6,7 @@
 
 FROM rabbitmq:3.8-management-alpine
 
-RUN rabbitmq-plugins enable --offline rabbitmq_management rabbitmq_stomp rabbitmq_web_stomp rabbitmq_mqtt rabbitmq_web_mqtt
+RUN rabbitmq-plugins enable --offline rabbitmq_management rabbitmq_mqtt rabbitmq_web_mqtt
 
 # make sure the metrics collector is re-enabled (disabled in the base image for Prometheus-style metrics by default)
 RUN rm -f /etc/rabbitmq/conf.d/management_agent.disable_metrics_collector.conf
@@ -33,4 +33,4 @@ RUN set -eux; \
 	apk add --no-cache python3; \
 	rabbitmqadmin --version
 
-EXPOSE 15672 15674 15675 1883 5672 
+EXPOSE 15672 5672 
